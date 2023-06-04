@@ -6,5 +6,6 @@ namespace food_file_backend.Services
     {
         Task<RecipeModel> CreateRecipe(RecipeModel model);
         IEnumerable<RecipeModel> GetRecipes();
+        void DeleteLast();   
     }
 }

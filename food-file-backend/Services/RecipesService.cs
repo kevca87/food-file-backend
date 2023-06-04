@@ -24,6 +24,11 @@ namespace food_file_backend.Services
             return model;
         }
 
+        public void DeleteLast()
+        {
+            _recipes.RemoveAt(_recipes.Count - 1);
+        }
+
         public IEnumerable<RecipeModel> GetRecipes()
         {
             return _recipes;

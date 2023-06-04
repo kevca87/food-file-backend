@@ -43,5 +43,19 @@ namespace food_file_backend.Controllers
             }
 
         }
+        [HttpDelete]
+        public async Task<ActionResult> DeleteLastRecipe()
+        {
+            try
+            {
+                _recipesService.DeleteLast();
+                return Ok();
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(StatusCodes.Status500InternalServerError, $"Something happend: {ex.Message}");
+            }
+        }
+
     }
 }
